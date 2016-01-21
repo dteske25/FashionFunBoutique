@@ -4,6 +4,16 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+$(document).ready(function(){
+    i = 1;
+    $("#images").append('<div class="item active"><img src="img/about/' + i + '.jpg"></div>');
+    i++;
+    while (i < 5){
+        $("#images").append('<div class="item"><img src="img/about/' + i + '.jpg"></div>');
+        i++;
+    }
+});
+
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
     $('a.page-scroll').bind('click', function(event) {
