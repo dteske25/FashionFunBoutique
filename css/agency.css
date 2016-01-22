@@ -159,15 +159,15 @@ fieldset[disabled] .btn-xl.active {
     border-color: rgba(255, 255, 255, .02)
 }
 .navbar-default .navbar-toggle {
-    background-color: #fed136;
-    border-color: #fed136
+    background-color: #814b9e;
+    border-color: #814b9e
 }
 .navbar-default .navbar-toggle .icon-bar {
     background-color: #fff
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-    background-color: #fed136
+    background-color: #814b9e
 }
 .navbar-default .nav li a {
     font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -189,7 +189,7 @@ fieldset[disabled] .btn-xl.active {
 .navbar-default .navbar-nav>.active>a:hover,
 .navbar-default .navbar-nav>.active>a:focus {
     color: #fff;
-    background-color: #fec503
+    background-color: #814b9e
 }
 @media (min-width: 768px) {
     .navbar-default {
@@ -547,9 +547,13 @@ aside.clients img {
 }
 section#contact {
     background-color: #222;
-    background-image: url(../img/map-image.png);
+    background-image: url(../img/mapBackground.png);
     background-position: center;
     background-repeat: no-repeat
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }
 section#contact .section-heading {
     color: #fff
@@ -726,6 +730,10 @@ body {
     webkit-tap-highlight-color: #fbb161
 }
 #headerLogo {
-    margin-top: -20px;
+    margin-top: -17px;
     height:50px;
+}
+#map {
+    width: 100%;
+    height: 400px;
 }
