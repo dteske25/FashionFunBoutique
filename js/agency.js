@@ -3,27 +3,29 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
-
+var maxImageSize = 0;
 $(document).ready(function(){
-
+    $('.carousel-control').on("focus",function(){
+        $(':focus').blur();
+    });
+    $("#images").append('<div class="item active"><img src="img/logos/logo.png"></div>');
     var feed = new Instafeed({
-        accessToken: '2712500769.5b9e1e6.e19a31b2db164ef0bffbaa35a7024f02',
+        accessToken: '1505573947.5b9e1e6.a775b76a42d1419e9e759787007adcfd',
         get: 'user',
-        userId:'207426984',
+        userId:'1505573947',
         sortBy: 'most-recent',
-        // filter: function(image) {
-        //     return image.tags.indexOf('tbt') >= 0;
-        // }
-        template: '<a class="animation" href="{{link}}"><img src="{{image}}" /></a>'
+        target: 'images',
+        resolution: 'standard_resolution',
+        template: '<div class="item"><img src="{{image}}" /></div>',
+        filter: function(image) {
+            if (image != null && image.images.standard_resolution.height >= maxImageSize){
+                maxImageSize = image.images.standard_resolution.height;
+                $("#images").css("height", maxImageSize);
+            }
+            return image.tags.indexOf('lilliansofstcloud') >= 0;
+        }
     });
     feed.run();
-    // i = 1;
-    // $("#images").append('<div class="item active"><img src="img/about/' + i + '.jpg"></div>');
-    // i++;
-    // while (i < 5){
-    //     $("#images").append('<div class="item"><img src="img/about/' + i + '.jpg"></div>');
-    //     i++;
-    // }
 });
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
