@@ -10,7 +10,8 @@ $(document).ready(function(){
     });
     $("#images").append('<div class="item active"><img src="img/logos/logo.png"></div>');
     var feed = new Instafeed({
-        accessToken: '1505573947.5b9e1e6.a775b76a42d1419e9e759787007adcfd',
+        //If the accessToken dies, redo it at http://instagram.pixelunion.net/
+        accessToken: '1505573947.1677ed0.808b762f67ac40308177b86f8faec09f',
         get: 'user',
         userId:'1505573947',
         sortBy: 'most-recent',
