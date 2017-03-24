@@ -5,10 +5,12 @@
  */
 var maxImageSize = 0;
 $(document).ready(function(){
+    $('#copyright-current-year').text(new Date().getFullYear());
+
     $('.carousel-control').on("focus",function(){
         $(':focus').blur();
     });
-    $("#images").append('<div class="item active"><img src="img/logos/logo.png"></div>');
+    $("#images").append('<div id="default-carousel-image" class="item active"><img src="img/logos/logo.png"></div>');
     var feed = new Instafeed({
         //If the accessToken dies, redo it at http://instagram.pixelunion.net/
         accessToken: '1505573947.1677ed0.808b762f67ac40308177b86f8faec09f',
@@ -27,6 +29,12 @@ $(document).ready(function(){
         }
     });
     feed.run();
+
+    // Manually remove the default picture after 10 seconds,
+    // giving the carousel plenty of time to load
+    setTimeout(function (){
+        $('#default-carousel-image').remove();
+    }, 10000);
 });
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
