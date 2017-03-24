@@ -72,7 +72,7 @@ function init() {
     zoom: 15,
 
     // The latitude and longitude to center the map (always required)
-    center: new google.maps.LatLng(45.2618, -94.1240), // Carroll
+    center: new google.maps.LatLng(45.2618, -94.1240),
 
     // Disables the default Google Maps UI components
     disableDefaultUI: true,
@@ -154,6 +154,6 @@ function init() {
     position: myLatLng,
     map: map,
     icon: image,
-    title: "Lillian's"
+    title: "Fashion Fun"
   });
 }
