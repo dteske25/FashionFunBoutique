@@ -33,7 +33,8 @@ $(document).ready(function(){
     // Manually remove the default picture after 10 seconds,
     // giving the carousel plenty of time to load
     setTimeout(function (){
-        $('#default-carousel-image').remove();
+        if ($('#images').children().length > 1)
+            $('#default-carousel-image').remove();
     }, 10000);
 });
 
