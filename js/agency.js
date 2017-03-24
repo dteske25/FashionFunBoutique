@@ -25,7 +25,7 @@ $(document).ready(function(){
                 maxImageSize = image.images.standard_resolution.height;
                 $("#images").css("height", maxImageSize);
             }
-            return image.tags.indexOf('checkusoutonline') >= 0;
+            return image.tags.indexOf('fashionfun') >= 0;
         }
     });
     feed.run();
