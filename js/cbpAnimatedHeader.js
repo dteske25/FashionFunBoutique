@@ -29,12 +29,12 @@ var cbpAnimatedHeader = (function() {
 		if ( sy >= changeHeaderOn ) {
 			classie.add( header, 'navbar-shrink' );
 			$("#navbarLogo").empty().append('<img id="headerLogo" src="img/logos/white-logo.png"/>');
-			//<img id="headerLogo" src="img/logos/white-logo.png"/>
 		}
 		else {
 			classie.remove( header, 'navbar-shrink' );
-			$("#navbarLogo").empty().append('<img id="headerLogoExpanded" src="img/logos/logo.png"/>');			
-			//<img id="headerLogoExpanded" src="img/logos/logo.png"/>
+			$("#navbarLogo").empty()
+				.append('<img id="headerLogoExpanded" class="hidden-xs" src="img/logos/logo.png"/>')
+				.append('<img id="headerLogo" class="hidden-sm hidden-md hidden-lg" src="img/logos/white-logo.png"/>');
 		}
 		didScroll = false;
 	}
@@ -44,5 +44,5 @@ var cbpAnimatedHeader = (function() {
 	}
 
 	init();
-
+	scrollPage();
 })();
